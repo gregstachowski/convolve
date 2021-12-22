@@ -4,13 +4,9 @@ Fast 1D convolution and Gaussian PSF in C without using Fourier Transforms
 convolvx.c: fast 1D convolution
 -------------------------------
 
-Originally convolve.c from read5, here stripped to just the
-convolution function, without the profile (gaussian) generator.
-The convolution was hand-optimised for the read5 code and is
-pretty quick, but does require the profile (PSF) to be the
+Optimised 1D convolution. Requires the profile (PSF) to be the
 same size as the source and result functions (this eliminates
-boundary checking and makes it much faster). This should not
-be a problem however.
+boundary checking and makes it much faster).
 
 The original unoptimised code has been left in comments for
 reference - it is actually pretty quick too, and is easier
@@ -27,9 +23,7 @@ or as part of a Lucy-Richardson iterative deconvolution process.
 psfx.c: point-spread function (PSF) generator for 1D convolution
 ----------------------------------------------------------------
 
-Originally "gauss()" was part of convolve.c, the convolution routine
-from read5. Here made into a generic 1D PSF code for general use,
-for example in line broadening of spectra.
+A generic 1D PSF code for general use, for example in line broadening of spectra.
 
 
 Copyright (c) G.S.Stachowski 1999-2003
